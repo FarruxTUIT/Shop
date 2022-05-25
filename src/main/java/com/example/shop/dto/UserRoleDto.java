@@ -19,7 +19,4 @@ public class UserRoleDto {
     @Size(min = 3,max = 25)
     private String name;
     private String status;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 }

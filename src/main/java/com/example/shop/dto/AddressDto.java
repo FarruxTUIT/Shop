@@ -23,9 +23,6 @@ public class AddressDto {
     private String street;
     @NotBlank(message = "Invalid home")
     private Integer home;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 }
 
 

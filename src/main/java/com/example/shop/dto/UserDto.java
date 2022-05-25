@@ -34,8 +34,5 @@ public class UserDto {
     private Integer imageId;
     private Integer userRoleId;
     private Integer addressId;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 }
 
