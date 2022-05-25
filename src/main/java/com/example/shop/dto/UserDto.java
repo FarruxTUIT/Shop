@@ -15,7 +15,6 @@ import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDto {
-
     private Integer id;
     @NotBlank(message = "Invalid name")
     @Size(min = 3,max = 25)
@@ -36,10 +35,5 @@ public class UserDto {
     private String status;
     private Integer userRoleId;
     private Integer addressId;
-
-
-
-
-
 }
 
