@@ -15,5 +15,4 @@ public class ImageDto {
     private String type;
     private String token;
     private Long size;
-
 }
