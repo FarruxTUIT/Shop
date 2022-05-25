@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -17,23 +18,24 @@ import javax.validation.constraints.Size;
 public class UserDto {
     private Integer id;
     @NotBlank(message = "Invalid name")
-    @Size(min = 3,max = 25)
     private String name;
     @NotBlank(message = "Invalid surname")
-    @Size(min = 3,max = 25)
     private String surname;
-    @NotBlank(message = "Xatolik yuz berdi")
+    @NotBlank(message = "Invalid email")
     @Email
     private String email;
-    @NotBlank(message = "Parol xato")
-    @Size(min = 8)
+    @NotBlank(message = "Invalid password")
+    @Size(min = 4)
     private String password;
-    @NotBlank(message = "Tog'ri kiriting")
+    @NotBlank(message = "Invalid contact")
     @Size(min = 12,max = 13)
     private String contact;
-    private Integer imageId;
     private String status;
+    private Integer imageId;
     private Integer userRoleId;
     private Integer addressId;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 }
 

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -18,4 +19,7 @@ public class UserRoleDto {
     @Size(min = 3,max = 25)
     private String name;
     private String status;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 }

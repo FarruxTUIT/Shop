@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -22,6 +23,9 @@ public class AddressDto {
     private String street;
     @NotBlank(message = "Invalid home")
     private Integer home;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 }
 
 
