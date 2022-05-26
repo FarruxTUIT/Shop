@@ -1,6 +1,5 @@
 package com.example.shop.entity;
 
-
 import com.example.shop.Enum.PostStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,23 +11,35 @@ import java.time.LocalDateTime;
 @Setter
 
 @Entity
-@Table(name = ("addresses"))
-public class Address {
+@Table(name = ("orders"))
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String region;
+    @ManyToOne
+    @JoinColumn(name = ("user_id"), insertable = false, updatable = false)
+    private User user;
 
-    private String city;
+    @Column(name = ("user_id"))
+    private Integer userId;
 
-    private String district;
+    @Column(name = ("delivery_date"))
+    private LocalDateTime deliveryDate;
 
-    private String street;
+    private String requirement;
 
-    private Integer home;
+    private String contact;
+
+    private String address;
+
+    @Column(name = ("delivered_date"))
+    private LocalDateTime deliveredDate;
 
     private PostStatus status;
+
+    @Column(name = ("total_payment"))
+    private Double totalPayment;
 
     @Column(name = ("created_at"))
     private LocalDateTime createdAt;
@@ -38,5 +49,5 @@ public class Address {
 
     @Column(name = ("deleted_at"))
     private LocalDateTime deletedAt;
-
 }
+

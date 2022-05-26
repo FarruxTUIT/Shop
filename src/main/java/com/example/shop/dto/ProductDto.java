@@ -1,24 +1,29 @@
 package com.example.shop.dto;
 
-
+import com.example.shop.Enum.PostStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserRoleDto {
+public class ProductDto {
     private Integer id;
-    @NotBlank(message = "Invalid name")
-    @Size(min = 3,max = 25)
+    @NotBlank(message = ("Invalid name"))
     private String name;
-    private String status;
+    @NotBlank(message = ("Invalid description"))
+    private String description;
+    @NotBlank(message = ("Invalid rate"))
+    private Integer rate;
+    private Boolean visible;
+    private ProductTypeDto productType;
+    private Integer productTypeId;
+    private PostStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;

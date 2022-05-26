@@ -34,10 +34,8 @@ public class AddressController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable ("id")Integer id){
+    public ResponseEntity<?> delete(@PathVariable ("id") Integer id){
         boolean result = addressService.delete(id);
         return  ResponseEntity.ok(result);
     }
-
-
 }

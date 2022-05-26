@@ -1,6 +1,5 @@
 package com.example.shop.entity;
 
-
 import com.example.shop.Enum.PostStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,21 +11,13 @@ import java.time.LocalDateTime;
 @Setter
 
 @Entity
-@Table(name = ("addresses"))
-public class Address {
+@Table(name = ("product_types"))
+public class ProductType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String region;
-
-    private String city;
-
-    private String district;
-
-    private String street;
-
-    private Integer home;
+    private String name;
 
     private PostStatus status;
 
@@ -38,5 +29,4 @@ public class Address {
 
     @Column(name = ("deleted_at"))
     private LocalDateTime deletedAt;
-
 }

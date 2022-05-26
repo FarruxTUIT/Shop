@@ -1,6 +1,7 @@
 package com.example.shop.entity;
 
 
+import com.example.shop.Enum.PostStatus;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
@@ -26,7 +27,7 @@ public class User {
 
     private String contact;
 
-    private String status;
+    private PostStatus status;
 
     @ManyToOne
     @JoinColumn(name = ("user_role_id"),insertable = false,updatable = false)
@@ -48,4 +49,13 @@ public class User {
 
     @Column(name = ("address_id"))
     private Integer addressId;
+
+    @Column(name = ("created_at"))
+    private LocalDateTime createdAt;
+
+    @Column(name = ("updated_at"))
+    private LocalDateTime updatedAt;
+
+    @Column(name = ("deleted_at"))
+    private LocalDateTime deletedAt;
 }

@@ -17,4 +17,7 @@ public class ImageDto {
     private String type;
     private String token;
     private Long size;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 }
