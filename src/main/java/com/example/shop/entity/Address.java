@@ -28,8 +28,6 @@ public class Address {
 
     private Integer home;
 
-    private PostStatus status;
-
     @Column(name = ("created_at"))
     private LocalDateTime createdAt;
 

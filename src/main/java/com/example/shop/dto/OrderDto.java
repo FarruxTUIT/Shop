@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Getter
@@ -20,7 +21,9 @@ public class OrderDto {
     @NotBlank(message = ("Invalid requirement"))
     private String requirement;
     @NotBlank(message = ("Invalid contact"))
+    @Size(min = 12, max = 13)
     private String contact;
+    @NotBlank(message = ("Invalid address"))
     private String address;
     private LocalDateTime deliveredDate;
     private PostStatus status;

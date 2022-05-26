@@ -1,5 +1,6 @@
 package com.example.shop.dto;
 
+import com.example.shop.Enum.PostStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
