@@ -17,13 +17,13 @@ public class AddressController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id) {
-        UserDto result = addressService.get(id);
+        AddressDto result = addressService.get(id);
         return ResponseEntity.ok(result);
     }
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody @Valid UserDto dto) {
-        UserDto result = addressService.create(dto);
+        AddressDto result = addressService.create(dto);
         return ResponseEntity.ok(result);
     }
 
@@ -32,4 +32,12 @@ public class AddressController {
         boolean result = addressService.update(id, dto);
         return ResponseEntity.ok(result);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable ("id")Integer id){
+        boolean result = addressService.delete(id);
+        return  ResponseEntity.ok(result);
+    }
+
+
 }
