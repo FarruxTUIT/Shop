@@ -22,18 +22,36 @@ public class AddressService {
         return addressDto;
     }
 
-    public AddressDto create(UserDto dto) {
+    public AddressDto create(AddressDto dto) {
         Address address = new Address();
         address.setCreatedAt(LocalDateTime.now());
-        return null;
+        addressRepository.save(address);
+        dto.setId(address.getId());
+        return dto;
     }
 
     public boolean update(Integer id, AddressDto dto) {
-        return false;
+        Address update = getEntity(id);
+        convertDtoToEntity(update,dto);
+        update.setUpdatedAt(LocalDateTime.now());
+        addressRepository.save(update);
+        return true;
     }
 
     public boolean delete(Integer id) {
-        return false;
+        Address delete = getEntity(id);
+        delete.setDeletedAt(LocalDateTime.now());
+        addressRepository.save(delete);
+        return true;
+    }
+
+
+    private void convertDtoToEntity(Address update, AddressDto dto) {
+        update.setRegion(dto.getRegion());
+        update.setCity(dto.getCity());
+        update.setDistrict(dto.getDistrict());
+        update.setStreet(dto.getStreet());
+        update.setHome(dto.getHome());
     }
 
     private void convertEntityToDto(Address address, AddressDto addressDto) {

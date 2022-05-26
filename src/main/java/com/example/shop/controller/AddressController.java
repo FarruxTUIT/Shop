@@ -22,7 +22,7 @@ public class AddressController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid UserDto dto) {
+    public ResponseEntity<?> create(@RequestBody @Valid AddressDto dto) {
         AddressDto result = addressService.create(dto);
         return ResponseEntity.ok(result);
     }
