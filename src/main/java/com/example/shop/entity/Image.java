@@ -21,7 +21,7 @@ public class Image {
     private String path;
 
     private String type;
-
+    @Column(unique = true)
     private String token;
 
     private Long size;

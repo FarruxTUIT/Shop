@@ -16,7 +16,7 @@ public class AddressService {
     public AddressDto get(Integer id) {
         Address address = getEntity(id);
         AddressDto addressDto = new AddressDto();
-        convertEntityToDto(address, addressDto);
+        convertDtoToEntity(address, addressDto);
         return addressDto;
     }
 
@@ -30,7 +30,7 @@ public class AddressService {
 
     public boolean update(Integer id, AddressDto dto) {
         Address update = getEntity(id);
-        convertDtoToEntity(update,dto);
+        convertEntityTo(update,dto);
         update.setUpdatedAt(LocalDateTime.now());
         addressRepository.save(update);
         return true;
@@ -44,7 +44,7 @@ public class AddressService {
     }
 
 
-    public void convertDtoToEntity(Address update, AddressDto dto) {
+    public void convertEntityTo(Address update, AddressDto dto) {
         update.setRegion(dto.getRegion());
         update.setCity(dto.getCity());
         update.setDistrict(dto.getDistrict());
@@ -52,7 +52,7 @@ public class AddressService {
         update.setHome(dto.getHome());
     }
 
-    public void convertEntityToDto(Address address, AddressDto addressDto) {
+    public void convertDtoToEntity(Address address, AddressDto addressDto) {
         addressDto.setRegion(address.getRegion());
         addressDto.setCity(address.getCity());
         addressDto.setDistrict(address.getDistrict());

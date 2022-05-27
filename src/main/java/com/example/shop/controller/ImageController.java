@@ -28,13 +28,13 @@ public class ImageController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid ImageDto imageDto) {
-        ImageDto result = imageService.update(id,imageDto);
+        boolean result = imageService.update(id,imageDto);
         return ResponseEntity.ok(result);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable ("id")Integer id){
-        ImageDto result = imageService.delete(id);
+        boolean result = imageService.delete(id);
         return ResponseEntity.ok(result);
     }
 }
