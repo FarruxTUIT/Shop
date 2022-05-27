@@ -19,6 +19,43 @@ public class ProductType {
 
     private String name;
 
+    private Integer core;
+
+    private String material;
+
+    private String display;
+
+    private Integer ram;
+
+    @Column(name = ("camera_front"))
+    private Integer cameraFront;
+
+    @Column(name = ("camera_back"))
+    private Integer cameraBack;
+
+    private Integer storage;
+
+    @ManyToOne
+    @JoinColumn(name = ("merchant_id"), insertable = false, updatable = false)
+    private Merchant merchant;
+
+    @Column(name = ("merchant_id"))
+    private Integer merchantId;
+
+    @ManyToOne
+    @JoinColumn(name = ("os_id"), insertable = false, updatable = false)
+    private Os os;
+
+    @Column(name = ("os_id"))
+    private Integer osId;
+
+    @ManyToOne
+    @JoinColumn(name = ("brand_id"), insertable = false, updatable = false)
+    private Brand brand;
+
+    @Column(name = ("brand_id"))
+    private Integer brandId;
+
     private PostStatus status;
 
     @Column(name = ("created_at"))
