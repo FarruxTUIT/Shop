@@ -25,15 +25,15 @@ public class UserRoleService {
 
     public UserRoleDto create(UserRoleDto userRoleDto) {
         UserRole userRole = new UserRole();
-        userRole.setId(userRoleDto.getId());
         userRole.setName(userRoleDto.getName());
         userRole.setCreatedAt(LocalDateTime.now());
+        userRoleRepository.save(userRole);
+        userRoleDto.setId(userRole.getId());
         return userRoleDto;
     }
 
     public boolean update(Integer id, UserRoleDto userRoleDto) {
         UserRole update = getEntity(id);
-        update.setId(userRoleDto.getId());
         update.setName(userRoleDto.getName());
         update.setUpdatedAt(LocalDateTime.now());
         userRoleRepository.save(update);
