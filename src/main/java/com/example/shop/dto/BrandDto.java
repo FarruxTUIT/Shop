@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -16,4 +17,7 @@ public class BrandDto {
     @NotBlank(message = ("Invalid name"))
     private String name;
     private PostStatus status;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 }
