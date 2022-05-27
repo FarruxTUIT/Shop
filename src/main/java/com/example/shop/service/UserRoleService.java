@@ -1,7 +1,9 @@
 package com.example.shop.service;
 
 import com.example.shop.dto.UserRoleDto;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserRoleService {
     public UserRoleDto get(Integer id) {
         return null;
