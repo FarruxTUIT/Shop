@@ -6,7 +6,9 @@ import com.example.shop.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/images")
 public class ImageController {
@@ -28,12 +30,12 @@ public class ImageController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid ImageDto imageDto) {
-        boolean result = imageService.update(id,imageDto);
+        boolean result = imageService.update(id, imageDto);
         return ResponseEntity.ok(result);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable ("id")Integer id){
+    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
         boolean result = imageService.delete(id);
         return ResponseEntity.ok(result);
     }

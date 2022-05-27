@@ -1,12 +1,15 @@
 package com.example.shop.service;
+
 import com.example.shop.dto.AddressDto;
 import com.example.shop.entity.Address;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.Optional;
+
 @Service
 public class AddressService {
 
@@ -30,7 +33,7 @@ public class AddressService {
 
     public boolean update(Integer id, AddressDto dto) {
         Address update = getEntity(id);
-        convertEntityTo(update,dto);
+        convertEntityTo(update, dto);
         update.setUpdatedAt(LocalDateTime.now());
         addressRepository.save(update);
         return true;

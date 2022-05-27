@@ -1,9 +1,11 @@
 package com.example.shop.controller;
+
 import com.example.shop.dto.AddressDto;
 import com.example.shop.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 
 @RestController
@@ -31,8 +33,8 @@ public class AddressController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable ("id") Integer id){
+    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
         boolean result = addressService.delete(id);
-        return  ResponseEntity.ok(result);
+        return ResponseEntity.ok(result);
     }
 }

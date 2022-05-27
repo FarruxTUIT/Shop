@@ -1,10 +1,12 @@
 package com.example.shop.service;
+
 import com.example.shop.dto.UserRoleDto;
 import com.example.shop.entity.UserRole;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.UserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -46,6 +48,7 @@ public class UserRoleService {
         userRoleRepository.save(delete);
         return true;
     }
+
     private UserRole getEntity(Integer id) {
         Optional<UserRole> optional = userRoleRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
