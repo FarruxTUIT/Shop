@@ -1,12 +1,9 @@
 package com.example.shop.service;
-
 import com.example.shop.dto.AddressDto;
-import com.example.shop.dto.UserDto;
 import com.example.shop.entity.Address;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -46,7 +43,7 @@ public class AddressService {
     }
 
 
-    private void convertDtoToEntity(Address update, AddressDto dto) {
+    public void convertDtoToEntity(Address update, AddressDto dto) {
         update.setRegion(dto.getRegion());
         update.setCity(dto.getCity());
         update.setDistrict(dto.getDistrict());
@@ -54,7 +51,7 @@ public class AddressService {
         update.setHome(dto.getHome());
     }
 
-    private void convertEntityToDto(Address address, AddressDto addressDto) {
+    public void convertEntityToDto(Address address, AddressDto addressDto) {
         address.setRegion(addressDto.getRegion());
         address.setCity(addressDto.getCity());
         address.setDistrict(addressDto.getDistrict());
@@ -62,7 +59,7 @@ public class AddressService {
         address.setHome(addressDto.getHome());
     }
 
-    private Address getEntity(Integer id) {
+    public Address getEntity(Integer id) {
         Optional<Address> optional = addressRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
             throw new BadRequest("Address not found");
