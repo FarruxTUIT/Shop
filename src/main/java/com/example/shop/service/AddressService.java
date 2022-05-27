@@ -53,11 +53,11 @@ public class AddressService {
     }
 
     public void convertEntityToDto(Address address, AddressDto addressDto) {
-        address.setRegion(addressDto.getRegion());
-        address.setCity(addressDto.getCity());
-        address.setDistrict(addressDto.getDistrict());
-        address.setStreet(addressDto.getStreet());
-        address.setHome(addressDto.getHome());
+        addressDto.setRegion(address.getRegion());
+        addressDto.setCity(address.getCity());
+        addressDto.setDistrict(address.getDistrict());
+        addressDto.setStreet(address.getStreet());
+        addressDto.setHome(address.getHome());
     }
 
     public Address getEntity(Integer id) {
