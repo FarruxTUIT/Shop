@@ -26,13 +26,13 @@ public class UserRoleController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid UserRoleDto userRoleDto) {
-        UserRoleDto result = userRoleService.update(id, userRoleDto);
+        boolean result = userRoleService.update(id, userRoleDto);
         return ResponseEntity.ok(result);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
-        UserRoleDto result = userRoleService.delete(id);
+        boolean result = userRoleService.delete(id);
         return ResponseEntity.ok(result);
     }
 }

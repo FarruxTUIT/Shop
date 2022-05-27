@@ -1,23 +1,56 @@
 package com.example.shop.service;
-
 import com.example.shop.dto.UserRoleDto;
+import com.example.shop.entity.UserRole;
+import com.example.shop.exception.BadRequest;
+import com.example.shop.repository.UserRoleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class UserRoleService {
+
+    @Autowired
+    private UserRoleRepository userRoleRepository;
+
     public UserRoleDto get(Integer id) {
-        return null;
+        UserRole userRole = getEntity(id);
+        UserRoleDto userRoleDto = new UserRoleDto();
+        userRoleDto.setName(userRole.getName());
+        userRoleDto.setId(userRole.getId());
+        userRoleRepository.save(userRole);
+        return userRoleDto;
     }
 
     public UserRoleDto create(UserRoleDto userRoleDto) {
-        return null;
+        UserRole userRole = new UserRole();
+        userRole.setId(userRoleDto.getId());
+        userRole.setName(userRoleDto.getName());
+        userRole.setCreatedAt(LocalDateTime.now());
+        return userRoleDto;
     }
 
-    public UserRoleDto update(Integer id, UserRoleDto userRoleDto) {
-        return null;
+    public boolean update(Integer id, UserRoleDto userRoleDto) {
+        UserRole update = getEntity(id);
+        update.setId(userRoleDto.getId());
+        update.setName(userRoleDto.getName());
+        update.setUpdatedAt(LocalDateTime.now());
+        userRoleRepository.save(update);
+        return true;
     }
 
-    public UserRoleDto delete(Integer id) {
-        return null;
+    public boolean delete(Integer id) {
+        UserRole delete = getEntity(id);
+        delete.setDeletedAt(LocalDateTime.now());
+        userRoleRepository.save(delete);
+        return true;
+    }
+    private UserRole getEntity(Integer id) {
+        Optional<UserRole> optional = userRoleRepository.findByIdAndDeletedAtIsNull(id);
+        if (optional.isEmpty()) {
+            throw new BadRequest("UserRole not found");
+        }
+        return optional.get();
     }
 }
