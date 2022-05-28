@@ -57,6 +57,7 @@ public class AddressService {
     }
 
     public void convertDtoToEntity(Address address, AddressDto addressDto) {
+        addressDto.setId(address.getId());
         addressDto.setRegion(address.getRegion());
         addressDto.setCity(address.getCity());
         addressDto.setDistrict(address.getDistrict());

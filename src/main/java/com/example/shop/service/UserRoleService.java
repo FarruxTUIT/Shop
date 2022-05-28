@@ -49,7 +49,7 @@ public class UserRoleService {
         return true;
     }
 
-    private UserRole getEntity(Integer id) {
+    public UserRole getEntity(Integer id) {
         Optional<UserRole> optional = userRoleRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
             throw new BadRequest("UserRole not found");

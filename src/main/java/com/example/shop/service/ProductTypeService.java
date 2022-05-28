@@ -80,7 +80,7 @@ public class ProductTypeService {
         return true;
     }
 
-    public void convertDtoToEntity(ProductTypeDto dto,ProductType productType) {
+    public void convertDtoToEntity(ProductTypeDto dto, ProductType productType) {
         dto.setId(productType.getId());
         dto.setName(productType.getName());
         dto.setCore(productType.getCore());
