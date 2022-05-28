@@ -1,9 +1,7 @@
 package com.example.shop.controller;
 
 import com.example.shop.dto.BrandDto;
-import com.example.shop.dto.OsDto;
 import com.example.shop.service.BrandService;
-import com.example.shop.service.OsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

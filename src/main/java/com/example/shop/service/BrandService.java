@@ -1,12 +1,9 @@
 package com.example.shop.service;
 
 import com.example.shop.dto.BrandDto;
-import com.example.shop.dto.OsDto;
 import com.example.shop.entity.Brand;
-import com.example.shop.entity.Os;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.BrandRepository;
-import com.example.shop.repository.OsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,7 +50,7 @@ public class BrandService {
     public Brand getEntity(Integer id) {
         Optional<Brand> optional = brandRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
-            throw new BadRequest("UserRole not found");
+            throw new BadRequest("Brand not found");
         }
         return optional.get();
     }

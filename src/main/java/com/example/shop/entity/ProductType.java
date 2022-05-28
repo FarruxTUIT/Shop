@@ -1,7 +1,6 @@
 package com.example.shop.entity;
 
 import com.example.shop.Enum.PostStatus;
-import com.example.shop.dto.MerchantDto;
 import lombok.Getter;
 import lombok.Setter;
 

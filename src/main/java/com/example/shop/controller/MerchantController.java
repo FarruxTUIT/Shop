@@ -1,6 +1,5 @@
 package com.example.shop.controller;
 
-import com.example.shop.dto.AddressDto;
 import com.example.shop.dto.MerchantDto;
 import com.example.shop.service.MerchantService;
 import org.springframework.beans.factory.annotation.Autowired;

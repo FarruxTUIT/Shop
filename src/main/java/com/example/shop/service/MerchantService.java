@@ -1,9 +1,7 @@
 package com.example.shop.service;
 
 import com.example.shop.dto.MerchantDto;
-import com.example.shop.dto.UserRoleDto;
 import com.example.shop.entity.Merchant;
-import com.example.shop.entity.UserRole;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.MerchantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +50,7 @@ public class MerchantService {
     public Merchant getEntity(Integer id) {
         Optional<Merchant> optional = merchantRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
-            throw new BadRequest("UserRole not found");
+            throw new BadRequest("Merchant not found");
         }
         return optional.get();
     }

@@ -107,7 +107,7 @@ public class ProductTypeService {
     public ProductType getEntity(Integer id) {
         Optional<ProductType> optional = productTypeRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
-            throw new BadRequest("Visit not found");
+            throw new BadRequest("ProductType not found");
         }
         return optional.get();
     }
