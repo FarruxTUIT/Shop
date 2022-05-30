@@ -29,13 +29,13 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid UserDto userDto) {
-        UserDto result = userService.update(id, userDto);
+        boolean result = userService.update(id, userDto);
         return ResponseEntity.ok(result);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
-        UserDto result = userService.delete(id);
+        boolean result = userService.delete(id);
         return ResponseEntity.ok(result);
     }
 }

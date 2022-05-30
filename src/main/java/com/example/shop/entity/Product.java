@@ -28,7 +28,7 @@ public class Product {
     private Boolean visible;
 
     @ManyToOne
-    @JoinColumn(name = ("product_type_id"))
+    @JoinColumn(name = ("product_type_id"), insertable = false, updatable = false)
     private ProductType productType;
 
     @Column(name = ("product_type_id"))

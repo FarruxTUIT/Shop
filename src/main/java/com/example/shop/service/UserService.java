@@ -47,7 +47,7 @@ public class UserService {
         return userDto;
     }
 
-    private User getEntity(Integer id) {
+    public User getEntity(Integer id) {
         Optional<User> optional = userRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
             throw new BadRequest("User not found");

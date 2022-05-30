@@ -25,7 +25,7 @@ public class OrderItem {
     private Integer orderId;
 
     @ManyToOne
-    @JoinColumn(name = ("product_id"), insertable = true, updatable = false)
+    @JoinColumn(name = ("product_id"), insertable = false, updatable = false)
     private Product product;
 
     @Column(name = ("product_id"))
