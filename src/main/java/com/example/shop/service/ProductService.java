@@ -1,6 +1,6 @@
 package com.example.shop.service;
 
-import com.example.shop.dto.ProductDto;
+import com.example.shop.dto.product.ProductDto;
 import com.example.shop.entity.Product;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.ProductRepository;

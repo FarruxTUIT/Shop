@@ -1,4 +1,4 @@
-package com.example.shop.dto;
+package com.example.shop.dto.product;
 
 import com.example.shop.Enum.PostStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;

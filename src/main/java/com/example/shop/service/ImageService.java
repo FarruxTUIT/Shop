@@ -1,7 +1,7 @@
 package com.example.shop.service;
 
 
-import com.example.shop.dto.ImageDto;
+import com.example.shop.dto.user.ImageDto;
 import com.example.shop.entity.Image;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.ImageRepository;

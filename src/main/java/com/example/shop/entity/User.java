@@ -27,7 +27,7 @@ public class User {
 
     private String contact;
 
-    private PostStatus status;
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = ("user_role_id"),insertable = false,updatable = false)

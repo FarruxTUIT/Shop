@@ -1,4 +1,4 @@
-package com.example.shop.dto;
+package com.example.shop.dto.product;
 
 import com.example.shop.Enum.PostStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class OsDto {
+public class BrandDto {
     private Integer id;
     @NotBlank(message = ("Invalid name"))
     private String name;

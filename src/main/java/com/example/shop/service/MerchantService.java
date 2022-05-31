@@ -1,6 +1,6 @@
 package com.example.shop.service;
 
-import com.example.shop.dto.MerchantDto;
+import com.example.shop.dto.product.MerchantDto;
 import com.example.shop.entity.Merchant;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.MerchantRepository;

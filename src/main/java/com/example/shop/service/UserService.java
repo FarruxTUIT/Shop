@@ -1,5 +1,5 @@
 package com.example.shop.service;
-import com.example.shop.dto.UserDto;
+import com.example.shop.dto.user.UserDto;
 import com.example.shop.entity.User;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.UserRepository;
@@ -25,6 +25,10 @@ public class UserService {
 
     public UserDto create(UserDto userDto) {
         User create = new User();
+        Optional<User> optional = userRepository.findByEmailOrContactAndDeletedAtIsNull(userDto.getEmail(), userDto.getContact());
+        if (optional.isPresent()){
+            throw new BadRequest("User already taken");
+        }
         //TODO: check userRole
         userRoleService.getEntity(userDto.getUserRoleId());
         //TODO: check image
@@ -38,12 +42,12 @@ public class UserService {
     }
 
     public UserDto get(Integer id) {
-        User get = getEntity(id);
+        User user = getEntity(id);
         UserDto userDto = new UserDto();
         userDto.setUserRole(userRoleService.get(userDto.getUserRoleId()));
         userDto.setImage(imageService.get(userDto.getImageId()));
         userDto.setAddress(addressService.get(userDto.getImageId()));
-        convertDtoToEntity(get,userDto);
+        convertDtoToEntity(user,userDto);
         return userDto;
     }
 
@@ -76,12 +80,12 @@ public class UserService {
         return true;
     }
 
-    private void convertDtoToEntity(User get, UserDto userDto) {
-        get.setId(userDto.getId());
-        get.setName(userDto.getName());
-        get.setSurname(userDto.getSurname());
-        get.setEmail(userDto.getEmail());
-        get.setPassword(userDto.getPassword());
-        get.setContact(userDto.getContact());
+    public void convertDtoToEntity(User user, UserDto userDto) {
+        user.setId(userDto.getId());
+        user.setName(userDto.getName());
+        user.setSurname(userDto.getSurname());
+        user.setEmail(userDto.getEmail());
+        user.setPassword(userDto.getPassword());
+        user.setContact(userDto.getContact());
     }
 }

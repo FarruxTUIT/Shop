@@ -1,7 +1,6 @@
-package com.example.shop.dto;
+package com.example.shop.dto.user;
 
 
-import com.example.shop.Enum.PostStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,7 +30,7 @@ public class UserDto {
     @NotBlank(message = "Invalid contact")
     @Size(min = 12,max = 13)
     private String contact;
-    private PostStatus status;
+    private Boolean status;
     private UserRoleDto userRole;
     private Integer userRoleId;
     private ImageDto image;

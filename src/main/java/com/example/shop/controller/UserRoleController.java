@@ -1,15 +1,15 @@
 package com.example.shop.controller;
 
-import com.example.shop.dto.UserRoleDto;
+import com.example.shop.dto.user.UserRoleDto;
 import com.example.shop.service.UserRoleService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
+@AllArgsConstructor
 public class UserRoleController {
-    @Autowired
     private UserRoleService userRoleService;
 
     @GetMapping("/{id}")

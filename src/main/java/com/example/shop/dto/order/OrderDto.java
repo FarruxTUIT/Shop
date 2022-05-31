@@ -1,6 +1,7 @@
-package com.example.shop.dto;
+package com.example.shop.dto.order;
 
 import com.example.shop.Enum.PostStatus;
+import com.example.shop.dto.user.UserDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;

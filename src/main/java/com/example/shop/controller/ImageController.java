@@ -1,7 +1,7 @@
 package com.example.shop.controller;
 
 
-import com.example.shop.dto.ImageDto;
+import com.example.shop.dto.user.ImageDto;
 import com.example.shop.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

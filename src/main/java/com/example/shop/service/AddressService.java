@@ -1,6 +1,6 @@
 package com.example.shop.service;
 
-import com.example.shop.dto.AddressDto;
+import com.example.shop.dto.user.AddressDto;
 import com.example.shop.entity.Address;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.AddressRepository;

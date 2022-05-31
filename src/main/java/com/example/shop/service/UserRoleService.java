@@ -1,6 +1,6 @@
 package com.example.shop.service;
 
-import com.example.shop.dto.UserRoleDto;
+import com.example.shop.dto.user.UserRoleDto;
 import com.example.shop.entity.UserRole;
 import com.example.shop.exception.BadRequest;
 import com.example.shop.repository.UserRoleRepository;
