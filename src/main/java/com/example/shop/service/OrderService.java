@@ -33,7 +33,7 @@ public class OrderService {
         userService.getEntity(dto.getUserId());
         order.setUserId(dto.getUserId());
 
-        convertEntityToDto(order, dto);
+        convertDtoToEntity(order, dto);
         order.setCreatedAt(LocalDateTime.now());
         orderRepository.save(order);
         dto.setId(order.getId());
@@ -46,7 +46,7 @@ public class OrderService {
         userService.getEntity(dto.getUserId());
         order.setUserId(dto.getUserId());
 
-        convertEntityToDto(order, dto);
+        convertDtoToEntity(order, dto);
         order.setUpdatedAt(LocalDateTime.now());
         orderRepository.save(order);
         return true;
@@ -68,11 +68,11 @@ public class OrderService {
         dto.setTotalPayment(order.getTotalPayment());
     }
 
-    public void convertEntityToDto(Order order, OrderDto dto) {
-        dto.setRequirement(order.getRequirement());
-        dto.setContact(order.getContact());
-        dto.setAddress(order.getAddress());
-        dto.setTotalPayment(order.getTotalPayment());
+    public void convertDtoToEntity(Order order, OrderDto dto) {
+        order.setRequirement(dto.getRequirement());
+        order.setContact(dto.getContact());
+        order.setAddress(dto.getAddress());
+        order.setTotalPayment(dto.getTotalPayment());
 
     }
 

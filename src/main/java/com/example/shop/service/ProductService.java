@@ -70,9 +70,9 @@ public class ProductService {
     }
 
     public void convertEntityToDto(Product product, ProductDto dto) {
-        dto.setName(product.getName());
-        dto.setDescription(product.getDescription());
-        dto.setRate(product.getRate());
+        product.setName(dto.getName());
+        product.setDescription(dto.getDescription());
+        product.setRate(dto.getRate());
 
     }
 
