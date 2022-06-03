@@ -19,7 +19,7 @@ public class Brand {
 
     private String name;
 
-    private PostStatus status;
+    private Boolean status;
 
     @Column(name = ("created_at"))
     private LocalDateTime createdAt;

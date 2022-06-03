@@ -20,7 +20,6 @@ public class MerchantService {
         MerchantDto merchantDto = new MerchantDto();
         merchantDto.setName(merchant.getName());
         merchantDto.setId(merchant.getId());
-        merchantRepository.save(merchant);
         return merchantDto;
     }
 

@@ -25,7 +25,6 @@ public class ImageService {
         imageDto.setPath(image.getPath());
         imageDto.setSize(image.getSize());
         imageDto.setToken(UUID.randomUUID().toString());
-        imageRepository.save(image);
         return imageDto;
     }
 

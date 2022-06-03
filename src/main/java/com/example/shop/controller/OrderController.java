@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping
+@RequestMapping("/order")
 public class OrderController {
     @Autowired
     private OrderService orderService;

@@ -16,7 +16,6 @@ public class OsDto {
     private Integer id;
     @NotBlank(message = ("Invalid name"))
     private String name;
-    private PostStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;

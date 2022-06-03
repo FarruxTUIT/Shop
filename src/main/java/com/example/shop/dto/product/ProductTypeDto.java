@@ -36,7 +36,6 @@ public class ProductTypeDto {
     private Integer osId;
     private BrandDto brand;
     private Integer brandId;
-    private PostStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;

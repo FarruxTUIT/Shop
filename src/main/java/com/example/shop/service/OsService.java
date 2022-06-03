@@ -21,7 +21,6 @@ public class OsService {
         OsDto osDto = new OsDto();
         osDto.setName(os.getName());
         osDto.setId(os.getId());
-        osRepository.save(os);
         return osDto;
     }
 

@@ -21,7 +21,6 @@ public class UserRoleService {
         UserRoleDto userRoleDto = new UserRoleDto();
         userRoleDto.setName(userRole.getName());
         userRoleDto.setId(userRole.getId());
-        userRoleRepository.save(userRole);
         return userRoleDto;
     }
 

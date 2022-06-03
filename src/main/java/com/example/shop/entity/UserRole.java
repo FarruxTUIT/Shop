@@ -1,7 +1,6 @@
 package com.example.shop.entity;
 
 
-import com.example.shop.Enum.PostStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,7 +19,7 @@ public class UserRole {
 
     private String name;
 
-    private PostStatus status;
+    private Boolean status;
 
     @Column(name = ("created_at"))
     private LocalDateTime createdAt;

@@ -22,13 +22,15 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         String header = request.getHeader("Authorization");
-        if (header == null || header.startsWith("Bearer")){
+        if (header == null || !header.startsWith("Bearer")){
             filterChain.doFilter(request, response);
+            return;
         }
 
         String token = header.split("")[1];
         if (!tokenUtil.validate(token)){
             filterChain.doFilter(request, response);
+            return;
         }
 
         String username = tokenUtil.getUsername(token);

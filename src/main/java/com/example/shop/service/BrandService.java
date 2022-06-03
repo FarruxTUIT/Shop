@@ -20,7 +20,6 @@ public class BrandService {
         BrandDto brandDto = new BrandDto();
         brandDto.setName(brand.getName());
         brandDto.setId(brand.getId());
-        brandRepository.save(brand);
         return brandDto;
     }
 

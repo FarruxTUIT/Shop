@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 @AllArgsConstructor
+@RestController
+@RequestMapping("/user-role")
 public class UserRoleController {
     private UserRoleService userRoleService;
 

@@ -21,12 +21,13 @@ public class Image {
     private String path;
 
     private String type;
+
     @Column(unique = true)
     private String token;
 
     private Long size;
 
-    private PostStatus status;
+    private Boolean status;
 
     @Column(name = ("created_at"))
     private LocalDateTime createdAt;
