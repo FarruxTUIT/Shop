@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ShopApplication {
-
+//Salom
     public static void main(String[] args) {
         SpringApplication.run(ShopApplication.class, args);
     }
